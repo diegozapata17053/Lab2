@@ -1,0 +1,56 @@
+/*3.Agregue a la funcion foo_function() un arreglo unidimensional del tipo y del tamanio que ud prefiera.
+ * Declare un puntero al arreglo y luego agregue las lineas de codigo necesarias para lograr que cada vez que
+ * se haga un llamado a la funcion foo_function() dentro de la funcion main se imprima un elemento del arreglo
+ * (en el orden que estan en el arreglo) con ayuda de la aritmetica de punteros.
+ */
+
+/* Enlaces de internet utiles:
+ * http://c.conclase.net/curso/index.php?cap=011
+ * http://c.conclase.net/curso/index.php?cap=011b#STR_sizeof
+ * https://stackoverflow.com/questions/8657776/pointer-arithmetic-with-structures
+ * https://stackoverflow.com/questions/119123/why-isnt-sizeof-for-a-struct-equal-to-the-sum-of-sizeof-of-each-member
+ * http://www.catb.org/esr/structure-packing/
+ * https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/
+ */
+# include <iostream>
+
+void foo_function(void); //Esta declaracion dejela tal y como esta
+
+  int nums[] = {1, 2, 3, 4, 5};
+  int *ptr = &nums [0];
+   static int cont=1;
+   
+#include <iostream>
+using namespace std;
+
+  int main()
+  {
+
+      //Agregue su codigo aqui
+
+
+      //Aqui puede agregar mas llamadas a function1.....
+      foo_function();
+
+   std::cout<<"Lectura de ptr "<<*(ptr)<<std::endl;
+
+
+      return 0;
+  }
+
+  void foo_function(void)
+  {
+      //Su codigo aqui
+      if (*((int*)ptr) == 5  & cont == 0)
+      {
+          cont=1;
+      }
+      else
+      {
+          ++ptr;
+      }
+
+    //std::cout<<("  ",ptr[cont])<<std::endl;
+      //Su codigo aqui tambien si quiere
+  }
+
